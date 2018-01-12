@@ -11,11 +11,13 @@ N_NON_POOL = 1
 POOL_OUTPUT_DIR = "Pool"
 NON_POOL_OUTPUT_DIR = "NonPool"
 
-POOL_KEYWORDS = ('swimming_pool_outdoor')
-NON_POOL_KEYWORDS = ('a/artists_loft', ' a/attic', ' b/basement', ' b/bathroom', ' b/bedroom', ' b/bow_window_indoor', ' c/cabin_outdoor', ' c/closet', ' e/entrance_hall', ' h/hallway', ' h/home_theater', ' h/house', ' l/lawn', ' l/living_room', ' n/nursery', ' p/parking_garage_indoor', ' p/parking_garage_outdoor', ' p/parlor', ' p/patio', ' r/residential_neighborhood', ' t/television_room', ' u/utility_room', ' y/yard')
+POOL_KEYWORDS = ('swimming_pool/outdoor')
+NON_POOL_KEYWORDS = ('a/artists_loft', 'a/attic', 'b/basement', 'b/bathroom', 'b/bedroom', 'b/bow_window/indoor', 'c/cabin_outdoor', 'c/closet', 'e/entrance_hall', 'h/hallway', 'h/home_theater', 'h/house', 'l/lawn', 'l/living_room', 'n/nursery', 'p/parking_garage', 'p/parlor', 'p/patio', 'r/residential_neighborhood', 't/television_room', 'u/utility_room', 'y/yard')
 
 mit_dir = sys.argv[1]
-local_contents = os.listdir(mit_dir)
+
+local_contents = [root for root, subdirs, files in os.walk(mit_dir)]
+
 print("Found directories:")
 print(local_contents)
 
@@ -24,7 +26,7 @@ def build_file_listing_for_keywords(mit_dirs, keyword_list):
     for keyword in keyword_list:
         for folder in mit_dirs:
             if keyword in folder:
-                valid_directories.append( os.path.join(mit_dir,folder))
+                valid_directories.append( folder)
 
     print("Using directories:")
     print(valid_directories)
@@ -32,6 +34,7 @@ def build_file_listing_for_keywords(mit_dirs, keyword_list):
     img_list = []
     for folder in valid_directories:
         for filename in os.listdir(folder):
+            print(filename)
             img_list.append(os.path.join(folder, filename))
     return img_list
 
@@ -42,7 +45,6 @@ selected_pool_files = random.sample(pool_file_listing, N_POOL)
 selected_non_pool_files = random.sample(non_pool_file_listing, N_NON_POOL)
 
 img_extension = os.path.splitext(selected_pool_files[0])[1]
-
 
 os.makedirs(POOL_OUTPUT_DIR)
 os.makedirs(NON_POOL_OUTPUT_DIR)
