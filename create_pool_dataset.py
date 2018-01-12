@@ -12,7 +12,7 @@ POOL_OUTPUT_DIR = "Pool"
 NON_POOL_OUTPUT_DIR = "NonPool"
 
 POOL_KEYWORDS = ('swimming_pool_outdoor')
-NON_POOL_KEYWORDS = ('a_artists_loft', ' a_attic', ' b_basement', ' b_bathroom', ' b_bedroom', ' b_bow_window_indoor', ' c_cabin_outdoor', ' c_closet', ' e_entrance_hall', ' h_hallway', ' h_home_theater', ' h_house', ' l_lawn', ' l_living_room', ' n_nursery', ' p_parking_garage_indoor', ' p_parking_garage_outdoor', ' p_parlor', ' p_patio', ' r_residential_neighborhood', ' t_television_room', ' u_utility_room', ' y_yard')
+NON_POOL_KEYWORDS = ('a/artists_loft', ' a/attic', ' b/basement', ' b/bathroom', ' b/bedroom', ' b/bow_window_indoor', ' c/cabin_outdoor', ' c/closet', ' e/entrance_hall', ' h/hallway', ' h/home_theater', ' h/house', ' l/lawn', ' l/living_room', ' n/nursery', ' p/parking_garage_indoor', ' p/parking_garage_outdoor', ' p/parlor', ' p/patio', ' r/residential_neighborhood', ' t/television_room', ' u/utility_room', ' y/yard')
 
 mit_dir = sys.argv[1]
 local_contents = os.listdir(mit_dir)
