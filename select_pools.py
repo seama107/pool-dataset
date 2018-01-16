@@ -14,8 +14,8 @@ NON_POOL_OUTPUT_DIR = "NonPool"
 temp_pool_dir = sys.argv[1]
 temp_non_pool_dir = sys.argv[2]
 
-pool_file_listing = os.listdir(temp_pool_dir)
-non_pool_file_listing = os.listdir(temp_non_pool_dir)
+pool_file_listing = [os.path.join(temp_pool_dir, f) for f in os.listdir(temp_pool_dir)]
+non_pool_file_listing = [os.path.join(temp_non_pool_dir, f) for f in os.listdir(temp_non_pool_dir)]
 
 print("Found {} pool images".format(len(pool_file_listing)))
 print("Found {} non pool images".format(len(non_pool_file_listing)))
