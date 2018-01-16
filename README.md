@@ -6,6 +6,9 @@ Dataset constructed using (MIT CSAIL)[http://places.csail.mit.edu/index.html] da
 
 This script builds a split between the pool and non_pool images
 
+Images inside of /Pool and /NonPool
+
+
 ## Usage
 
 Run with:
