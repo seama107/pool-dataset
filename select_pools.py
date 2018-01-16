@@ -17,6 +17,9 @@ temp_non_pool_dir = sys.argv[2]
 pool_file_listing = os.listdir(temp_pool_dir)
 non_pool_file_listing = os.listdir(temp_non_pool_dir)
 
+print("Found {} pool images".format(len(pool_file_listing)))
+print("Found {} non pool images".format(len(non_pool_file_listing)))
+
 selected_pool_files = random.sample(pool_file_listing, N_POOL)
 selected_non_pool_files = random.sample(non_pool_file_listing, N_NON_POOL)
 
